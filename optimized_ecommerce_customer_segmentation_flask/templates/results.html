@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="card">
+    <h2>K-Means Cluster Summary (RFM Means per Cluster)</h2>
+    {% if kmeans_summary is not none %}
+        {{ kmeans_summary.to_html(classes="table", index=True) | safe }}
+    {% else %}
+        <p>No K-Means summary found. Run the pipeline first.</p>
+    {% endif %}
+</section>
+
+<section class="card">
+    <h2>K-Means: k Selection (Silhouette Scores)</h2>
+    {% if kmeans_k_sel is not none %}
+        {{ kmeans_k_sel.to_html(classes="table", index=False) | safe }}
+    {% else %}
+        <p>No k-selection results found.</p>
+    {% endif %}
+</section>
+
+<section class="card">
+    <h2>Sample of Customers with K-Means Cluster</h2>
+    {% if rfm_kmeans is not none %}
+        {{ rfm_kmeans.to_html(classes="table", index=False) | safe }}
+    {% else %}
+        <p>No K-Means customer data found.</p>
+    {% endif %}
+</section>
+
+<section class="card">
+    <h2>Sample of Customers with Whale-Optimized K-Means Cluster</h2>
+    {% if rfm_kmeans_whale is not none %}
+        {{ rfm_kmeans_whale.to_html(classes="table", index=False) | safe }}
+    {% else %}
+        <p>No Whale-optimized customer data found.</p>
+    {% endif %}
+</section>
+
+<section class="card">
+    <h2>Fuzzy C-Means Cluster Centers (Scaled RFM)</h2>
+    {% if fuzzy_centers is not none %}
+        {{ fuzzy_centers.to_html(classes="table", index=True) | safe }}
+    {% else %}
+        <p>No fuzzy C-means centers found.</p>
+    {% endif %}
+</section>
+
+<section class="card">
+    <h2>Fuzzy C-Means Metrics</h2>
+    {% if fuzzy_metrics %}
+        <pre class="code-block">{{ fuzzy_metrics }}</pre>
+    {% else %}
+        <p>No fuzzy C-means metrics file found.</p>
+    {% endif %}
+</section>
+
+<section class="card">
+    <h2>Whale Optimization Result</h2>
+    {% if whale_result %}
+        <pre class="code-block">{{ whale_result }}</pre>
+    {% else %}
+        <p>No whale optimization result file found.</p>
+    {% endif %}
+</section>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="card">
+    <h2>Upload E-commerce Orders Dataset</h2>
+    <p>Upload a CSV file with at least: <code>order_id</code>, <code>customer_id</code>, <code>order_date</code>, <code>amount</code>.</p>
+    <form action="{{ url_for('run_pipeline') }}" method="post" enctype="multipart/form-data">
+        <div class="form-row">
+            <input type="file" name="dataset" accept=".csv" required>
+        </div>
+        <button type="submit">Run Segmentation Pipeline</button>
+    </form>
+</section>
+
+{% if summary %}
+<section class="card">
+    <h2>Last Run Summary</h2>
+    <pre class="code-block">{{ summary }}</pre>
+    <p>See <a href="{{ url_for('results') }}">Results</a> for detailed tables.</p>
+</section>
+{% endif %}
+{% endblock %}

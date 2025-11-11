@@ -1,0 +1,126 @@
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f5fb;
+    color: #222;
+}
+
+header {
+    background: #111827;
+    color: #fff;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+nav a {
+    color: #bfdbfe;
+    margin-left: 1rem;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    max-width: 1100px;
+    margin: 1.5rem auto 2rem auto;
+    padding: 0 1rem;
+}
+
+.card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(15, 23, 42, 0.08);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.card h2 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+}
+
+.form-row {
+    margin-bottom: 1rem;
+}
+
+input[type="file"] {
+    padding: 0.4rem;
+}
+
+button {
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    border-radius: 999px;
+    padding: 0.6rem 1.4rem;
+    font-size: 0.95rem;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+
+.table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 0.85rem;
+}
+
+.table th,
+.table td {
+    border: 1px solid #e5e7eb;
+    padding: 0.4rem 0.5rem;
+    text-align: right;
+}
+
+.table th {
+    background: #f9fafb;
+    text-align: center;
+}
+
+.code-block {
+    background: #0f172a;
+    color: #e5e7eb;
+    padding: 0.75rem;
+    border-radius: 8px;
+    font-family: "Fira Code", monospace;
+    font-size: 0.85rem;
+    overflow-x: auto;
+}
+
+.flash-messages {
+    max-width: 1100px;
+    margin: 1rem auto 0 auto;
+    padding: 0 1rem;
+}
+
+.flash-message {
+    background: #ecfdf5;
+    color: #166534;
+    border: 1px solid #bbf7d0;
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.8rem;
+    color: #6b7280;
+}
